@@ -4,8 +4,8 @@
 	<modelVersion>4.0.0</modelVersion>
 
 	<groupId>com.rpicloud</groupId>
-	<artifactId>spring-boot-rest-example</artifactId>
-	<version>0.0.1-SNAPSHOT</version>
+	<artifactId>pet</artifactId>
+	<version>1.0</version>
 	<packaging>jar</packaging>
 
 	<name>spring-boot-rest-example</name>
