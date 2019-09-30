@@ -27,7 +27,7 @@ public class PieRestController {
 
         @RequestMapping(method = RequestMethod.GET, value = "/{id}")
         public ResponseEntity<Pie> getPieWithId(@PathVariable Long id) {
-            return new ResponseEntity<>(repository.findOne(id),HttpStatus.OK);
+            return new ResponseEntity<>(repository.findById(id).get(),HttpStatus.OK);
         }
 
         @RequestMapping(method = RequestMethod.GET, params = {"name"})
