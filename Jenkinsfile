@@ -12,8 +12,6 @@ pipeline
     parameters 
     {
         string(name: 'PROJECT_NAME', defaultValue: 'pipeline-s2i' ,description: 'What is the project name?')
-        string(name: 'GIT', defaultValue: 'https://github.com/lhsribas/spring-boot-rest-example.git' ,description: 'What is the git repo?')
-        string(name: 'GIT_BRANCH', defaultValue: 'master', description: 'What is the git branch name?')
     }
 
     environment 
@@ -31,12 +29,12 @@ pipeline
             {
                 script 
                 {
-                    git branch: "${params.GIT_BRANCH}", url: "${params.GIT}" 
-                
+                	checkout scm
+                    
                     version = readMavenPom().getVersion();
                     echo "Version ::: ${version}"
 
-                    artifactId = readMavenPom().getArtifactId()
+                    artifactId = readMavenPom().getArtifactId();
                     echo "artifactId ::: ${artifactId}"
                 
                 }
