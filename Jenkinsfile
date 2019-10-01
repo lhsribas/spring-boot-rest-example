@@ -23,14 +23,12 @@ pipeline
 
     stages 
     {
-        stage("Checkout") 
+        stage("Get ArtifactID and Version") 
         {
             steps 
             {
                 script 
                 {
-                	checkout scm
-                    
                     version = readMavenPom().getVersion();
                     echo "Version ::: ${version}"
 
